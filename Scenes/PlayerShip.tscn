@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://asdf/dash.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/ShipLogic.gd" type="Script" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 1 )
+
+[node name="ShipRoot" type="RigidBody"]
+gravity_scale = 0.0
+script = ExtResource( 2 )
+
+[node name="ARVROrigin" type="ARVROrigin" parent="."]
+
+[node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
+
+[node name="ControlPanel" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0.123418, -0.281085, -2.4233 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
